@@ -1,0 +1,4 @@
+IssueId,ComponentId,Title,Severity,Status,Owner
+ISS-001,CMP-AX17,Torque evidence missing,High,Submitted,synthetic.user
+ISS-002,CMP-BX21,Dimensional deviation,Medium,InReview,synthetic.owner
+ISS-003,CMP-CX10,Documentation correction,Low,Draft,synthetic.user
