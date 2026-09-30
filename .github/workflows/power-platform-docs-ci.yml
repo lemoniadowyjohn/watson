@@ -4,11 +4,25 @@ on:
   push:
     branches: [main]
     paths:
-      - "portfolio/power-platform-quality-app/**"
+      - "schema/**"
+      - "powerfx/**"
+      - "flows/**"
+      - "governance/**"
+      - "samples/**"
+      - "docs/**"
+      - "scripts/**"
+      - "README.md"
       - ".github/workflows/power-platform-docs-ci.yml"
   pull_request:
     paths:
-      - "portfolio/power-platform-quality-app/**"
+      - "schema/**"
+      - "powerfx/**"
+      - "flows/**"
+      - "governance/**"
+      - "samples/**"
+      - "docs/**"
+      - "scripts/**"
+      - "README.md"
       - ".github/workflows/power-platform-docs-ci.yml"
 
 permissions:
@@ -17,9 +31,6 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: portfolio/power-platform-quality-app
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
