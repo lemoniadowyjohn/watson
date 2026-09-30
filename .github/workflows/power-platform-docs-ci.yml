@@ -11,6 +11,7 @@ on:
       - "samples/**"
       - "docs/**"
       - "scripts/**"
+      - "portfolio/power-platform-quality-app/**"
       - "README.md"
       - ".github/workflows/power-platform-docs-ci.yml"
   pull_request:
@@ -22,6 +23,7 @@ on:
       - "samples/**"
       - "docs/**"
       - "scripts/**"
+      - "portfolio/power-platform-quality-app/**"
       - "README.md"
       - ".github/workflows/power-platform-docs-ci.yml"
 
@@ -36,4 +38,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python scripts/validate_docs.py
+      - name: Validate root reference implementation
+        run: python scripts/validate_docs.py
+      - name: Validate recruiter-facing portfolio mirror
+        run: python portfolio/power-platform-quality-app/scripts/validate_docs.py
