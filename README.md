@@ -10,7 +10,7 @@ This repository serves as a public-safe portfolio container. Historical Watson c
 Synthetic CSV/XLSX reconciliation with deterministic business keys, validation, reason-coded discrepancies, reviewable exception output, OpenPyXL workbook generation, automated tests and CI.
 
 ### Quality Issue & Inspection Management App
-[Open Power Platform reference implementation](portfolio/power-platform-quality-app)
+[Open Power Platform reference implementation](POWER_PLATFORM_REFERENCE.md)
 
 Public-safe Power Platform architecture/reference implementation covering Power Apps patterns, Dataverse schema, Power Automate approval design, SharePoint evidence storage, governance/ALM concepts and synthetic sample data.
 
