@@ -1,0 +1,6 @@
+.env
+.env.*
+*.zip
+*.msapp
+*.bak
+.DS_Store
