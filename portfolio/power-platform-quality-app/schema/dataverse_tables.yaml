@@ -1,0 +1,54 @@
+tables:
+  Component:
+    primary_key: ComponentId
+    fields:
+      - ComponentId: text
+      - Name: text
+      - PartNumber: text
+      - Active: boolean
+  Inspection:
+    primary_key: InspectionId
+    fields:
+      - InspectionId: guid
+      - ComponentId: lookup(Component)
+      - Inspector: owner
+      - InspectionDate: datetime
+      - Result: choice(Pass,Fail,Conditional)
+  Issue:
+    primary_key: IssueId
+    fields:
+      - IssueId: guid
+      - ComponentId: lookup(Component)
+      - InspectionId: lookup(Inspection)
+      - Title: text
+      - Description: multiline_text
+      - Severity: choice(Low,Medium,High,Critical)
+      - Status: choice(Draft,Submitted,InReview,Approved,Rejected,Closed)
+      - Owner: owner
+      - CreatedOn: datetime
+  Evidence:
+    primary_key: EvidenceId
+    fields:
+      - EvidenceId: guid
+      - IssueId: lookup(Issue)
+      - SharePointPath: text
+      - FileName: text
+      - UploadedOn: datetime
+  Approval:
+    primary_key: ApprovalId
+    fields:
+      - ApprovalId: guid
+      - IssueId: lookup(Issue)
+      - Approver: user
+      - Decision: choice(Pending,Approved,Rejected)
+      - DecisionDate: datetime
+      - Comment: multiline_text
+  StatusHistory:
+    primary_key: StatusHistoryId
+    fields:
+      - StatusHistoryId: guid
+      - IssueId: lookup(Issue)
+      - FromStatus: text
+      - ToStatus: text
+      - ChangedBy: user
+      - ChangedOn: datetime
