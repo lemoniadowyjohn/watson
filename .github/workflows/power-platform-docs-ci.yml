@@ -1,0 +1,28 @@
+name: Power Platform portfolio validation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "portfolio/power-platform-quality-app/**"
+      - ".github/workflows/power-platform-docs-ci.yml"
+  pull_request:
+    paths:
+      - "portfolio/power-platform-quality-app/**"
+      - ".github/workflows/power-platform-docs-ci.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: portfolio/power-platform-quality-app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python scripts/validate_docs.py
