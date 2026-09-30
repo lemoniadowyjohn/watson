@@ -1,0 +1,5 @@
+component_id,variant,description,quantity,status
+C-100,V1,front bracket,10.0,open
+C-200,V2,Rear bracket revised,5,Released
+C-300,V1,Sensor holder,9,Open
+C-500,V1,Protective cap,12,Open
