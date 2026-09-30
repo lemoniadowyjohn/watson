@@ -11,8 +11,8 @@ on:
       - "samples/**"
       - "docs/**"
       - "scripts/**"
-      - "portfolio/power-platform-quality-app/**"
       - "README.md"
+      - "LIMITATIONS.md"
       - ".github/workflows/power-platform-docs-ci.yml"
   pull_request:
     paths:
@@ -23,8 +23,8 @@ on:
       - "samples/**"
       - "docs/**"
       - "scripts/**"
-      - "portfolio/power-platform-quality-app/**"
       - "README.md"
+      - "LIMITATIONS.md"
       - ".github/workflows/power-platform-docs-ci.yml"
 
 permissions:
@@ -38,7 +38,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Validate root reference implementation
+      - name: Validate reference implementation
         run: python scripts/validate_docs.py
-      - name: Validate recruiter-facing portfolio mirror
-        run: python portfolio/power-platform-quality-app/scripts/validate_docs.py
